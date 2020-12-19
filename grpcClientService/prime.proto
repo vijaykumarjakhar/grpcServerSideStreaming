@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcServerSideStreaming";
+
+package prime;
+
+// The greeting service definition.
+service PrimeNumber {
+  // Sends a greeting
+  rpc PrimeNumberMethod (PrimeManyTimeRequest) returns (stream PrimeManyTimeResposnce);
+}
+
+// The request message containing the user's name.
+message PrimeManyTimeRequest {
+  int32 primeReq = 1;
+}
+
+// The response message containing the greetings.
+message PrimeManyTimeResposnce {
+  string primeRes = 1;}
